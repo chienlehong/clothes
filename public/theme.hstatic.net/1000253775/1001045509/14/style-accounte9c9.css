@@ -1,0 +1,128 @@
+/*Customer*/
+.icon-field {
+	display: none;
+}
+.style-bold {
+	font-weight: 600 !important;
+	font-style: normal !important;
+}
+#customer-login {
+	padding: 20px 15px 30px;
+	position: relative;
+	background: #fff;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.10);
+	margin: 50px auto;
+	width: 460px;
+	@media (max-width: 480px){
+		width: 370px;
+	}
+}
+
+#customer-login h1, #recover-password h2{
+	font-size: 22px !important;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px !important;
+	color:rgba(0,0,0,0.75);
+	font-weight:600;
+}
+#customer-login .userbox .large_form{margin: 0 !important}
+#customer-login .userbox .large_form input {
+	padding: 0px 9px;
+	height: 40px;
+	border: 1px solid #e0e0e0;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #eaeaea;
+	box-shadow: inset 0px 0px 5px 0px #eaeaea;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 40px;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	width: 100%;
+	margin-bottom: 20px;
+	background: transparent;
+	font-weight:400;
+}
+form#create_customer select, form#create_customer input{margin-bottom:5px !important;}
+.action_bottom{
+	border-bottom: 1px solid #e8e8e8;
+	padding-bottom: 10px !important;
+	margin-bottom: 20px;
+}
+#customer-login .userbox .action_bottom input[type="submit"], #recover-password.userbox .action_bottom input[type="submit"], .action_bottom.button.dark button#phone-auth-submit, button#otp_submit{
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 0px 16px !important;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	border: 0;
+	border-radius: 0;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+#customer-login .optionCheck input[type="radio"]{margin-top:4px;padding:0;}
+#customer-login .optionCheck label{
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+a.style-forget{
+	font-style: italic;
+	font-size: 12px;
+	color: #6d6d6d;
+}
+.optionCheck {
+	float: left;
+	display: inline-block;
+	width: 50% !important;
+	margin: 10px 0px;
+	text-align: left;
+}
+#recover-password input[type="radio"] {
+	width: initial;
+	height: initial;
+	float: left;
+	margin-right: 5px;
+	line-height: 34px;
+	font-size: 13px;
+	padding-left: 5px;
+}
+#recover-password.userbox .action_bottom{
+	padding:10px 20px;
+}
+.otpcode {
+	display: none;
+}
+.label-or{
+	margin: 10px 0 10px 0 !important;
+}
+
+form#create_customer .clearfix.large_form input {
+	margin-bottom: 15px !important; 
+}
+#recover-password.userbox .action_bottom {
+	width: 100%;
+}
+.req_pass.text-center {
+	text-align: center;
+	width: 100%;
+	margin: 0px;
+}
+.userbox .errors a {color: red;}
+.clearfix{clear:both;}
+.userbox .errors{
+	margin-top: 5px;
+	margin-bottom: 15px;
+}

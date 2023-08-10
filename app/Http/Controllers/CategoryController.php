@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('category.index',['categories'=>$categories]);
+        return view('admin.category.index',['categories'=>$categories]);
     }
 
     /**
@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('admin.category.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('category.edit',compact('category'));
+        return view('admin.category.edit',compact('category'));
     }
 
     /**
@@ -86,5 +86,14 @@ class CategoryController extends Controller
     {
         $category->forceDelete();
         return redirect()->route('category.index')->with('success','Xoa thanh cong');
+    }
+    public function share(Request $request){
+        $keyword = $request->input('keyword');
+        $keyword = trim(strip_tags($keyword));
+        $categories=[];
+        if ($keyword!=""){
+            $categories = Category::where("category_name","LIKE","%$keyword%")->get();
+        }
+        return view('admin.category.index',['categories'=>$categories]);
     }
 }

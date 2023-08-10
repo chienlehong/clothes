@@ -19,7 +19,7 @@ class ProductController extends Controller
             'brand',
             'category'
         ]);
-        return view('product.index',['products'=>$products]);
+        return view('admin.product.index',['products'=>$products]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $brands = Brand::all();
         $category = Category::all();
-        return view('product.create',[
+        return view('admin.product.create',[
             'brands'=>$brands,
             'category'=>$category,
         ]);
@@ -78,7 +78,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $category = Category::all();
         $brands = Brand::all();
-        return view('product.edit',[
+        return view('admin.product.edit',[
             'product'=>$product,
             'brands'=>$brands,
             'category'=>$category,
@@ -108,8 +108,9 @@ class ProductController extends Controller
             $product->fill([
                 'image'=>$image,
             ])->save();
-            return redirect()->route('product.index')->with('success','Cap nhap thanh cong');
+
         }
+        return redirect()->route('product.index')->with('success','Cap nhap thanh cong');
     }
 
     /**
@@ -119,5 +120,14 @@ class ProductController extends Controller
     {
         $product->forceDelete();
         return redirect()->route('product.index')->with('success','Xoa thanh cong');
+    }
+    public function share(Request $request){
+        $keyword = $request->input('keyword');
+        $keyword = trim(strip_tags($keyword));
+        $products=[];
+        if ($keyword!=""){
+            $products = Product::where("product_name","LIKE","%$keyword%")->get();
+        }
+        return view('admin.product.index',['categories'=>$products]);
     }
 }

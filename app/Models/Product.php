@@ -25,4 +25,20 @@ class Product extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    public static function getDifferentProducts($limit = 5)
+    {
+        return self::inRandomOrder()->limit($limit)->get();
+    }
+
+    public static function Products($limit = 10)
+    {
+        return self::distinct()->inRandomOrder()->limit($limit)->get();
+    }
+    public static function Product($limit = 10)
+    {
+        return self::distinct()->inRandomOrder()->limit($limit)->get();
+    }
+    public function cart(){
+        return $this->hasMany(Cart::class);
+    }
 }
